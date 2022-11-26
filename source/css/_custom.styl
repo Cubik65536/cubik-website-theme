@@ -33,8 +33,38 @@ $dark-background-mobile = convert(hexo-config('style.color.dark.background-mobil
 //   font-weight: normal
 //   font-style: normal
 
-$ff-body = system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif
-$ff-code = Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif
+@font-face
+  font-family: 'Apple Color Emoji';
+  src: url('https://assets.cubik65536.top/fonts/AppleColorEmoji.ttf');
+  font-weight: normal;
+  font-style: normal;
+
+@font-face
+  font-family: 'LXGW WenKai Screen';
+  src: url('https://assets.cubik65536.top/fonts/LXGWWenKaiScreen.ttf');
+  font-weight: normal;
+  font-style: normal;
+
+@font-face
+  font-family: 'ProFont For Powerline';
+  src: url('https://assets.cubik65536.top/fonts/ProFontForPowerline.ttf');
+  font-weight: normal;
+  font-style: normal;
+
+@font-face
+  font-family: 'Smiley Sans'
+  src: url('https://assets.cubik65536.top/fonts/SmileySans-Oblique.ttf')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Source Han Serif'
+  src: url('https://assets.cubik65536.top/fonts/SourceHanSerif.ttc')
+  font-weight: normal
+  font-style: normal
+
+$ff-body = "ProFont For Powerline", "Smiley Sans", "LXGW WenKai Screen", "Apple Color Emoji", "Source Han Serif", system-ui, -apple-system, sans-serif
+$ff-code = "ProFont For Powerline", "Smiley Sans", "LXGW WenKai Screen", "Apple Color Emoji", "Source Han Serif", system-ui, -apple-system, monospace, sans-serif
 $ff-logo = $ff-body
 
 if hexo-config('style.font-family.body')
