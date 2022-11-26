@@ -157,6 +157,13 @@ function layoutFooterDiv() {
       }
       el += '</div>';
     }
+    if (theme.footer.picturesocial) {
+      for (let id of Object.keys(theme.footer.picturesocial)) {
+        let item = theme.footer.picturesocial[id];
+        el += '<br/>&nbsp;<a href="' + item.url + '" target="_blank" >'
+        el += '<img src="' + item.image + '" alt="' + item.description + '" style="width:175px;height:auto;" /></a>'
+      }
+    }
     el += '</footer>';
     return el;
   } else {
