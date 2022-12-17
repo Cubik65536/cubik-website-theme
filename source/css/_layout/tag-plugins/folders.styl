@@ -1,7 +1,7 @@
 .tag-plugin.folders
   display: block
   margin: 1rem 0
-  border-radius: $border-block
+  border-radius: $border-bar
   font-size: $fs-14
   border: 1px solid var(--theme-border)
   overflow: hidden
@@ -30,13 +30,13 @@
     &:hover
       color: var(--text-p0)
       background: var(--block-hover)
-      &:after
-        position: absolute
-        content: '+'
-        text-align: center
-        top: 50%
-        transform: translateY(-50%)
-        right: 1rem
+    &:after
+      position: absolute
+      content: '+'
+      text-align: center
+      top: 50%
+      transform: translateY(-50%)
+      right: 1rem
 
 
 .tag-plugin.folders details[open]
@@ -49,7 +49,7 @@
   >summary
     color: var(--text-p1)
     background: var(--block-hover)
-    &:hover:after
+    &:after
       content: '-'
       
   >div.body

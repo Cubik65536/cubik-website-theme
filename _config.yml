@@ -1,6 +1,6 @@
 ######## Stellar info ########
 stellar:
-  version: '1.17.2'
+  version: '1.18.1'
   homepage: 'https://xaoxuu.com/wiki/stellar/'
   repo: 'https://github.com/xaoxuu/hexo-theme-stellar'
   cdn_css: # Use cdn links instead of /css/main.css
@@ -85,7 +85,7 @@ search:
 
 ######## Comments ########
 comments:
-  service: # beaudar, utterances, twikoo, waline
+  service: # beaudar, utterances, giscus, twikoo, waline, artalk
   # beaudar
   # https://beaudar.lipk.org/
   beaudar:
@@ -129,22 +129,18 @@ comments:
   twikoo:
     js: https://fastly.jsdelivr.net/npm/twikoo@1.4.0/dist/twikoo.all.min.js # 建议锁定版本
     envId: https://xxx # vercel函数
+  
+  # Waline
+  # https://waline.js.org/
   waline:
     js: https://unpkg.com/@waline/client@v2/dist/waline.js
     css: https://unpkg.com/@waline/client@v2/dist/waline.css
     # Waline server address url, you should set this to your own link
     serverURL:
-
     # If false, comment count will only be displayed in post page, not in home page
     commentCount: true
-
     # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`.
     pageview: false
-
-    # Custom locales
-    # locale:
-    #   placeholder: Welcome to comment # Comment box placeholder
-
     # Custom emoji
     # emoji:
     #   - https://unpkg.com/@waline/emojis@1.1.0/weibo
@@ -154,28 +150,16 @@ comments:
     #   - https://unpkg.com/@waline/emojis@1.1.0/tieba
     #   - https://unpkg.com/@waline/emojis@1.1.0/tw-emoji
     #   - https://unpkg.com/@waline/emojis@1.1.0/bmoji
+  
+  # Artalk
+  # https://artalk.js.org/
+  artalk:
+    css: https://unpkg.com/artalk@2.4.3/dist/Artalk.css
+    js: https://unpkg.com/artalk@2.4.3/dist/Artalk.js 
+    server: # 后端服务地址
+    placeholder: ''
+    darkMode: auto
 
-    # Comment infomation, valid meta are nick, mail and link
-    # meta:
-    #   - nick
-    #   - mail
-    #   - link
-
-    # Set required meta field, e.g.: [nick] | [nick, mail]
-    # requiredMeta:
-    #   - nick
-
-    # Language, available values: en-US, zh-CN, zh-TW, pt-BR, ru-RU, jp-JP
-    # lang: zh-CN
-
-    # Word limit, no limit when setting to 0
-    # wordLimit: 0
-
-    # Whether enable login, can choose from 'enable', 'disable' and 'force'
-    # login: enable
-
-    # comment per page
-    # pageSize: 10
 
 ######## Footer ########
 footer:
@@ -214,9 +198,10 @@ footer:
 
 ######## Tag Plugins ########
 tag_plugins:
-  # {% note text %}
+  # {% ablock %} / {% note %}
   note:
     default_color: '' # light, dark, red, orange, yellow, green, cyan, blue, purple, warning, error
+    border: true # true / false
   # {% checkbox %}
   checkbox:
     interactive: false # enable interactive for user
@@ -244,6 +229,9 @@ tag_plugins:
   # {% mark %}
   mark:
     default_color: dark # light, dark, red, orange, yellow, green, cyan, blue, purple, warning, error
+  # {% tag %}
+  tag:
+    default_color: yellow # red, orange, yellow, green, cyan, blue, purple
 
 
 ######## JS Plugins ########
@@ -302,8 +290,8 @@ plugins:
   # swiper
   swiper:
     enable: true
-    css: https://unpkg.com/swiper@6/swiper-bundle.min.css
-    js: https://unpkg.com/swiper@6/swiper-bundle.min.js
+    css: https://unpkg.com/swiper@8/swiper-bundle.min.css
+    js: https://unpkg.com/swiper@8/swiper-bundle.min.js
 
 
   # 赫蹏 (Heti) - 专为中文网页内容设计的排版样式增强
@@ -333,37 +321,34 @@ plugins:
 style:
   darkmode: auto # auto / always / false
   smooth_scroll: true # true / false
-  font-size: 16px
+  font-size:
+    root: 16px
+    body: .9375rem # 15px
+    code: 85% # 14px
+    codeblock: 0.8125rem # 13px
   font-family:
     logo: 'system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif'
     body: 'system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif'
     code: 'Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif'
+    codeblock: 'Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif'
   text-align: left
+  border-radius:
+    card: 12px
+    block: 12px
+    bar: 6px
+    image: 6px
   color:
-    common:
-      theme: 'hsl(192 98% 55%)' # 主题色
-      accent: 'hsl(14 100% 57%)' # 强调色
-      link: 'hsl(207 90% 54%)' # 超链接颜色
-      button: 'hsl(192 98% 55%)' # 按钮颜色
-      hover: 'hsl(14 100% 57%)' # 按钮高亮颜色
     # 动态颜色（会根据明暗主题重设明度值，只用关心色相和饱和度即可）
-    dynamic: 
-      block: 'hsl(212 8% 95%)' # 块背景颜色
-    light:
-      background: hsl(212 16% 98%) # 浅色背景颜色
-      block: 'hsl(212 8% 95%)' # 块背景颜色
-      card: 'white' # 卡片背景颜色
-      title: 'black' # 标题文本颜色
-      text: 'hsl(0 0% 20%)' # 正文文本颜色
-      code: 'hsl(14 100% 48%)' # 行内代码颜色
-    dark:
-      background: 'hsl(212 6% 16%)' # 深色背景颜色
-      background-mobile: black # 移动端深色背景（OLED调成纯黑可以省电）
-      block: 'hsl(212 8% 20%)' # 块背景颜色
-      card: 'hsl(212 10% 22%)' # 卡片背景颜色
-      title: 'white' # 标题文本颜色
-      text: 'hsl(0 0% 93%)' # 正文文本颜色
-      code: 'hsl(14 100% 63%)' # 行内代码颜色
+    background: 'hsl(212 16% 98%)' # 浅色背景颜色
+    block: 'hsl(212 8% 95%)' # 块背景颜色
+    code: 'hsl(14 100% 48%)' # 行内代码颜色
+    text: 'hsl(0 0% 20%)' # 文本颜色
+    # 主题色配置（不会根据明暗动态调整，请设置为通用的颜色）
+    theme: 'hsl(192 98% 55%)' # 主题色
+    accent: 'hsl(14 100% 57%)' # 强调色
+    link: 'hsl(207 90% 54%)' # 超链接颜色
+    button: 'hsl(192 98% 55%)' # 按钮颜色
+    hover: 'hsl(14 100% 57%)' # 按钮高亮颜色
   animated_avatar:
     animate: auto # auto, always
     background: https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp
