@@ -29,7 +29,8 @@ p>code:not([class]),li>code:not([class])
     color: var(--text-p2)
     font-size: $fs-codeblock
     font-weight: 500
-    margin-left: 0.5rem
+    margin-top: 0.36rem
+    margin-left: 5rem
     display: inline-block
     span
       padding: 4px 0.5rem
@@ -37,6 +38,7 @@ p>code:not([class]),li>code:not([class])
       border-bottom-left-radius: $border-bar
       border-bottom-right-radius: $border-bar
       background: var(--block-hover)
+  
   >table
     overflow: auto
     display: block
@@ -44,7 +46,7 @@ p>code:not([class]),li>code:not([class])
       padding: 0
       border: none
       line-height: 1.5
-    margin: 0 !important
+    margin: 0.75rem 0 0 0 !important
     background: transparent
     border: none
     scrollbar-codeblock(convert(hexo-config('style.codeblock.scrollbar')))
@@ -52,7 +54,6 @@ p>code:not([class]),li>code:not([class])
       background: transparent
       &:hover
         background: transparent
-
 
   .gutter
     pointer-events: none
@@ -64,12 +65,15 @@ p>code:not([class]),li>code:not([class])
     // background: var(--block) // 如果希望行标固定请打开此行；但是如果想在较窄屏幕上拥有较好的阅读体验，建议让行标跟随滚动。
     left: 0
     z-index: 1
-    pre .line
+    pre
       color: var(--text-p4)
+      padding: 0 0 0 1.5rem !important
+  
   .code
     pre
       display: block
-      padding: 1.5rem 0 0 0.5rem !important
+      padding: 0 0 0 1.5rem !important
+  
   .gutter+.code pre
     padding-left: 0.25em
 
