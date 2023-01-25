@@ -40,9 +40,9 @@ meta:
 
 page:
   error:
-    what: 很抱歉，您访问的页面不存在
-    why: 可能是输入地址有误或该地址已被删除
-    action: 返回主页
+    what: 很抱歉，您访问的页面不存在 | Page Not Found
+    why: 可能是输入地址有误或该地址已被删除 | The address may be entered incorrectly or the post has been deleted.
+    action: 返回主页 | Back to Home
 
 search:
   search: 站内搜索
