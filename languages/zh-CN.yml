@@ -66,6 +66,13 @@ widget:
   repos: "仓库"
   follow: "关注"
 
+social:
+  github: GitHub (@Cubik65536)
+  gitlab: GitLab (@Cubik65536)
+  bilibili: 哔哩哔哩 (@Cubik65536)
+  telegram: Telegram (Cubik's Teleblog)
+  email: 向我发送邮件
+
 largesocial:
   title:
     PGP: 从 keys.openpgp.org 下载 PGP 公钥
@@ -75,3 +82,6 @@ largesocial:
     PGP: 我的 PGP 公钥
     foreverblog: 虫洞 | WORMHOLE
     travellings: 开往 | Travelling
+  
+picturesocial:
+  foreverblog: 【CUBIK 的小站】十年之约

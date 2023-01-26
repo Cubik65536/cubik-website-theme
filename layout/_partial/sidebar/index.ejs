@@ -110,7 +110,8 @@ function layoutFooterDiv() {
       if (item.icon && (item.url || item.onclick)) {
         el += '<a class="social"';
         if (item.title) {
-          el += ' title="' + item.title + '"';
+          // el += ' title="' + item.title + '"';
+          el += ' title="' + __(md_text(item.title)) + '"';
         }
         if (item.url) {
           el += ' href="' + url_for(item.url) + '"';
@@ -186,7 +187,8 @@ function layoutFooterDiv() {
       for (let id of Object.keys(theme.footer.picturesocial)) {
         let item = theme.footer.picturesocial[id];
         el += '<br/>&nbsp;<a href="' + item.url + '" target="_blank" >'
-        el += '<img src="' + item.image + '" alt="' + item.description + '" style="width:175px;height:auto;" /></a>'
+        // el += '<img src="' + item.image + '" alt="' + item.description + '" style="width:175px;height:auto;" /></a>'
+        el += '<img src="' + item.image + '" alt="' + __(md_text(item.description)) + '" style="width:175px;height:auto;" /></a>'
       }
     }
     el += '</footer>';
