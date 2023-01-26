@@ -137,7 +137,8 @@ function layoutFooterDiv() {
         if (item.icon && (item.url || item.onclick)) {
           el += '<a class="large-social"';
           if (item.title) {
-            el += ' title="' + item.title + '"';
+            // el += ' title="' + item.title + '"';
+            el += ' title="' + __(md_text(item.title)) + '"';
           }
           if (item.url) {
             el += ' href="' + url_for(item.url) + '"';
@@ -155,7 +156,8 @@ function layoutFooterDiv() {
           el += item.icon;
           if (item.description) {
             el += '<span class="description">';
-            el += item.description;
+            // el += item.description;
+            el += __(md_text(item.description));
             el += '</span>';
           }
           el += '</div>';

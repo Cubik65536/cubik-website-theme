@@ -65,3 +65,13 @@ widget:
   following: "following"
   repos: "repo"
   follow: "Follow"
+
+largesocial:
+  title:
+    PGP: Download PGP Public Key from keys.openpgp.org
+    foreverblog: WORMHOLE - Randomly Access Forever Blog blogs
+    travellings: Travelling - Friends Links
+  description:
+    PGP: My PGP Public Key
+    foreverblog: 虫洞 | WORMHOLE
+    travellings: 开往 | Travelling

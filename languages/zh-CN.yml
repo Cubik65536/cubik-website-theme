@@ -65,3 +65,13 @@ widget:
   following: "正在关注"
   repos: "仓库"
   follow: "关注"
+
+largesocial:
+  title:
+    PGP: 从 keys.openpgp.org 下载 PGP 公钥
+    foreverblog: 穿梭虫洞 - 随机访问十年之约友链博客
+    travellings: 开往 - 友链接力
+  description:
+    PGP: 我的 PGP 公钥
+    foreverblog: 虫洞 | WORMHOLE
+    travellings: 开往 | Travelling
