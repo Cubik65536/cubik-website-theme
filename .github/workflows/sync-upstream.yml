@@ -1,0 +1,18 @@
+name: Sync with upstream
+
+on:
+  schedule:
+    - cron: '0 1 * * *' # every day at 01:00
+  workflow_dispatch: # on button click
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tgymnich/fork-sync@v1.6.3
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          base: main
+          head: main
+          pr_title: 'Sync with upstream (xaoxuu/hexo-theme-stellar)'
+          
