@@ -37,6 +37,9 @@ footer:
       gitlab: GitLab
       pgp: keys.openpgp.org
 
+post-index:
+  timeline: 近期动态
+
 btn:
   home: 主页
   blog: 文章

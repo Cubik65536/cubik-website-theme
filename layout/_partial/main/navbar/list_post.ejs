@@ -1,4 +1,5 @@
 <%
+const language = page_language();
 function layoutDiv() {
   var el = '';
   el += '<div class="nav-wrap">';
@@ -40,10 +41,10 @@ function layoutDiv() {
   if (theme['post-index']) {
     const obj = theme['post-index'];
     for (let key of Object.keys(obj)) {
-      if (full_url_for(page.path) == full_url_for(obj[key])) {
-        el += '<a class="active" href="' + url_for(obj[key]) + '">' + key + '</a>';
+      if (full_url_for(page.path) == full_url_for(url_i18n_path(!is_default_language(language) ? language : null, obj[key]))) {
+        el += '<a class="active" href="' + url_for(url_i18n_path(!is_default_language(language) ? language : null, obj[key])) + '">' + __(key) + '</a>';
       } else {
-        el += '<a href="' + url_for(obj[key]) + '">' + key + '</a>';
+        el += '<a href="' + url_for(url_i18n_path(!is_default_language(language) ? language : null, obj[key])) + '">' + __(key) + '</a>';
       }
     }
   }

@@ -37,6 +37,9 @@ footer:
       gitlab: GitLab
       pgp: keys.openpgp.org
 
+post-index:
+  timeline: Timeline
+
 btn:
   home: Home
   blog: Blog
