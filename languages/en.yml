@@ -1,3 +1,42 @@
+license: This article is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/), attribution required.
+
+footer:
+  content: |
+    This blog is powered by [Hexo](https://hexo.io/) & [Hexo Theme Stellar](https://xaoxuu.com/wiki/stellar/), you can find the source code on [GitHub](https://github.com/Cubik65536/cubik-website/).
+    Copyright © 2020-2023 [@Cubik65536](https://cubik65536.top). All rights reserved.
+    Articles on this site are all licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (except for those with special statements), attribution required.
+  sitemap:
+    home:
+      group: Home
+      about: About
+      contact-me: Contact Me
+      my-pgp: My PGP
+    blog:
+      group: Blog
+      posts: Recent Update
+      categories: Categories
+      tags: Tags
+      archives: Archives
+      wiki: Wiki
+      notes: Notes
+      bookmarks: Bookmarks
+      commit-message-conventions: Commit Message Conventions
+    social:
+      group: Social
+      friends: Friends
+      bilibili: BiliBili
+      telegram: Telegram Channel
+      wormhole: 虫洞 | WORMHOLE
+      travelling: 开往 | Travelling
+    contact-me:
+      group: Contact Me
+      contact-me: Contact Me (Detail Page)
+      email: Email
+      email-pgp: Email (PGP Signed)
+      github: GitHub
+      gitlab: GitLab
+      pgp: keys.openpgp.org
+
 btn:
   home: Home
   blog: Blog

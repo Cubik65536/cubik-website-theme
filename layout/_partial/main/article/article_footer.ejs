@@ -46,7 +46,8 @@ function layoutDiv() {
       el += '<span>' + __('meta.license') + '</span>';
       el += '</div>';
       el += '<div class="body">';
-      el += markdown(page.license || theme.article.license);
+      // el += markdown(page.license || theme.article.license);
+      el += markdown(__(page.license || theme.article.license));
       el += '</div>';
       el += '</section>';
     }

@@ -346,6 +346,15 @@ hexo.extend.helper.register('i18n_path', function (language) {
     return (language ? '/' + language : '') + '/' + base;
 });
 
+hexo.extend.helper.register('url_i18n_path', function (language, path) {
+    if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('mailto:')) {
+        return path;
+    }
+    const url = (language ? '/' + language : '') + path
+    console.log('url_i18n_path', url);
+    return url;
+});
+
 /**
  * Format language to RFC5646 style
  */

@@ -1,4 +1,5 @@
 <%
+const language = page_language();
 function layoutDiv() {
   var el = '';
   el += '<nav class="menu dis-select';
@@ -15,7 +16,7 @@ function layoutDiv() {
     if (id == page.menu_id) {
       el += ' active';
     }
-    el += '" href="' + url_for(md_link(item)) + '">';
+    el += '" href="' + url_for(url_i18n_path(!is_default_language(language) ? language : null, md_link(item))) + '">';
     el += __(md_text(item));
     el += '</a>';
   }

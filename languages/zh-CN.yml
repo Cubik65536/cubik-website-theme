@@ -1,3 +1,42 @@
+license: 本文采用 [署名 - 非商业性使用 - 相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
+
+footer:
+  content: |
+    本博客由 [Hexo](https://hexo.io/) & [Hexo Theme Stellar](https://xaoxuu.com/wiki/stellar/) 强力驱动，您可以在 [GitHub](https://github.com/Cubik65536/cubik-website/) 找到本站源码。
+    Copyright © 2020-2023 [@Cubik65536](https://cubik65536.top) 保留所有权利。
+    本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 许可协议，转载请注明出处。
+  sitemap:
+    home:
+      group: 主页
+      about: 关于
+      contact-me: 联系我
+      my-pgp: 我的 PGP
+    blog:
+      group: 博客
+      posts: 近期发布
+      categories: 分类
+      tags: 标签
+      archives: 归档
+      wiki: 知识库
+      notes: 笔记
+      bookmarks: 网址收藏
+      commit-message-conventions: Git 提交信息格式
+    social:
+      group: 社交
+      friends: 友链
+      bilibili: 哔哩哔哩
+      telegram: Telegram 频道
+      wormhole: 虫洞 | WORMHOLE
+      travelling: 开往 | Travelling
+    contact-me:
+      group: 联系我
+      contact-me: 联系我 (详细信息页)
+      email: Email
+      email-pgp: Email (PGP 签名的)
+      github: GitHub
+      gitlab: GitLab
+      pgp: keys.openpgp.org
+
 btn:
   home: 主页
   blog: 文章
