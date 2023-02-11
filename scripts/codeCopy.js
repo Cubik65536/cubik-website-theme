@@ -11,7 +11,7 @@ hexo.extend.injector.register("body_end", function () {
       position: absolute;
       top: 0;
       right: 0;
-      padding: 6px 0.6rem;
+      padding: 5.5px 0.6rem;
       opacity: 0.25;
       font-weight: 1rem;
       color: var(--theme);
