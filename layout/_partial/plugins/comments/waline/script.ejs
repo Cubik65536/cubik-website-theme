@@ -8,9 +8,8 @@
       if (!path) {
         path = decodeURI(window.location.pathname);
       }
-      Waline.init(Object.assign(<%- JSON.stringify(theme.comments.waline) %>, {
+      Waline.init(Object.assign(<%- JSON.stringify(theme.comments.waline[page_language()]) %>, {
         el: '#waline_container',
-        lang: '<%= page_language() %>',
         path: path,
         <% if(!!theme.comments.waline.imageUploader?.api){ %>
           imageUploader: function(file) {
