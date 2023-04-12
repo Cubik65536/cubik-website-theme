@@ -11,6 +11,8 @@
       Waline.init(Object.assign(<%- JSON.stringify(theme.comments.waline[page_language()]) %>, {
         el: '#waline_container',
         path: path,
+        reaction: <%- page.reaction != undefined ? page.reaction : theme.comments.waline[page_language()].reaction %>,
+        locale: <%- JSON.stringify(page.comment_locale != undefined ? page.comment_locale : theme.comments.waline[page_language()].locale) %>,
         <% if(!!theme.comments.waline.imageUploader?.api){ %>
           imageUploader: function(file) {
             let headers = new Headers();
