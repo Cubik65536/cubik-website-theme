@@ -108,7 +108,7 @@ function layoutFooterDiv() {
     for (let id of Object.keys(theme.footer.social)) {
       let item = theme.footer.social[id];
       if (item.icon && (item.url || item.onclick)) {
-        el += '<a class="social"';
+        el += '<a rel="me" class="social"';
         if (item.title) {
           // el += ' title="' + item.title + '"';
           el += ' title="' + __(md_text(item.title)) + '"';
