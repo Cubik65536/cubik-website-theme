@@ -281,3 +281,9 @@ td
       pre
           &::before
               height 0px
+
+.md-text li:not([class]) a:not([class]):before, .md-text p:not([class]) a:not([class]):before
+    background unset !important
+
+.md-text li:not([class]) a:not([class]):hover:before, .md-text p:not([class]) a:not([class]):hover:before
+    background var(--theme-link) !important
