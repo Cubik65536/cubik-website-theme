@@ -58,6 +58,13 @@ btn:
   tags: Tags
   archives: Archives
   getting_started: Getting Started
+  games: Games
+  books: Books
+  movies: Movies
+  anime: Anime
+  music: Music
+  tv: TV
+  message_board: Message Board
 
 meta:
   recent_update: Recent Update

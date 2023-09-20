@@ -58,6 +58,13 @@ btn:
   tags: 标签
   archives: 归档
   getting_started: 开始使用
+  games: 游戏
+  books: 书籍
+  movies: 电影
+  anime: 动漫
+  music: 音乐
+  tv: 电视节目
+  message_board: 留言板
 
 meta:
   recent_update: 最近更新
