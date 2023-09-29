@@ -25,7 +25,7 @@ footer:
       group: Social
       friends: Friends
       bilibili: BiliBili
-      twitter: Twitter
+      x-twitter: X (formerly Twitter)
       mastodon: Mastodon
       telegram: Telegram Channel
       wormhole: 虫洞 | WORMHOLE
@@ -122,6 +122,7 @@ social:
   github: GitHub (@Cubik65536)
   gitlab: GitLab (@Cubik65536)
   bilibili: BiliBili (@Cubik65536)
+  x-twitter: X (formerly Twitter) (@Cubik65536)
   mastodon: Mastodon (@cubik65536@mstdn.ixor.tech)
   telegram: Telegram (Cubik's Teleblog)
   email: Send Email

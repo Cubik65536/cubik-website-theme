@@ -25,7 +25,7 @@ footer:
       group: 社交
       friends: 友链
       bilibili: 哔哩哔哩
-      twitter: Twitter
+      x-twitter: X (原 Twitter)
       mastodon: Mastodon
       telegram: Telegram 频道
       wormhole: 虫洞 | WORMHOLE
@@ -122,6 +122,7 @@ social:
   github: GitHub (@Cubik65536)
   gitlab: GitLab (@Cubik65536)
   bilibili: 哔哩哔哩 (@Cubik65536)
+  x-twitter: X (原 Twitter) (@Cubik65536)
   mastodon: Mastodon (@cubik65536@mstdn.ixor.tech)
   telegram: Telegram (Cubik's Teleblog)
   email: 向我发送邮件
