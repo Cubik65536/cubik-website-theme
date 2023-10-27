@@ -123,7 +123,8 @@ social:
   gitlab: GitLab (@Cubik65536)
   bilibili: BiliBili (@Cubik65536)
   x-twitter: X (formerly Twitter) (@Cubik65536)
-  mastodon: Mastodon (@cubik65536@mstdn.ixor.tech)
+  mastodon-en: Mastodon (@cubik65536@c.im)
+  mastodon-zh: Mastodon (@@cubik65536@m.cmx.im)
   telegram: Telegram (Cubik's Teleblog)
   email: Send Email
 
