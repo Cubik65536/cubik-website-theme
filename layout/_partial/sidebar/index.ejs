@@ -1,5 +1,5 @@
 <%
-const languages = display_languages();
+// const languages = display_languages();
 var proj;
 if (page.layout === 'wiki' && page.wiki) {
   proj = theme.wiki.projects[page.wiki];
@@ -169,19 +169,19 @@ function layoutFooterDiv() {
     }
     el += '<br/>';
     el += '<div class="large-social-wrap">';
-    for (let language of languages) {
-      el += '<a class="large-social"';
-      el += ' href="' + url_for(i18n_path(!is_default_language(language) ? language : null)) + '"';
-      el += ' rel="noopener noreferrer"';
-      el += '>';
-      el += '<div>';
-      el += '<img src="https://fapro6.cubik65536.top/svgs/duotone/language.svg" />';
-      el += '<span class="description">';
-      el += language_name(language);
-      el += '</span>';
-      el += '</div>';
-      el += '</a>';
-    }
+    // for (let language of languages) {
+    //   el += '<a class="large-social"';
+    //   el += ' href="' + url_for(i18n_path(!is_default_language(language) ? language : null)) + '"';
+    //   el += ' rel="noopener noreferrer"';
+    //   el += '>';
+    //   el += '<div>';
+    //   el += '<img src="https://fapro6.cubik65536.top/svgs/duotone/language.svg" />';
+    //   el += '<span class="description">';
+    //   el += language_name(language);
+    //   el += '</span>';
+    //   el += '</div>';
+    //   el += '</a>';
+    // }
     el += '</div>';
     if (theme.footer.picturesocial) {
       for (let id of Object.keys(theme.footer.picturesocial)) {
