@@ -1,6 +1,6 @@
 ######## Stellar info ########
 stellar:
-  version: '1.19.0'
+  version: '1.20.0'
   homepage: 'https://xaoxuu.com/wiki/stellar/'
   repo: 'https://github.com/xaoxuu/hexo-theme-stellar'
   cdn_css: # Use cdn links instead of /css/main.css
@@ -39,7 +39,7 @@ sidebar:
     # 文章内页
     post: search_blog, toc, ghrepo, ghissues # for pages using 'layout:post'
     # 文档内页
-    wiki: search, ghrepo, toc, ghissues, related # for pages using 'layout:wiki'
+    wiki: search, toc, ghissues, related # for pages using 'layout:wiki'
     # 其它 layout:page 的页面
     page: toc, search # for custom pages using 'layout:page'
 
@@ -249,9 +249,31 @@ tag_plugins:
   # {% mark %}
   mark:
     default_color: dark # light, dark, red, orange, yellow, green, cyan, blue, purple, warning, error
-  # {% tag %}
-  tag:
-    default_color: yellow # red, orange, yellow, green, cyan, blue, purple
+  # {% hashtag %}
+  hashtag:
+    default_color: # red, orange, yellow, green, cyan, blue, purple
+  # {% okr o1 percent:0.5 status:normal %}
+  okr:
+    border: true # 是否显示边框
+    status: # 可以自行增加
+      # 进行中状态
+      in_track:
+        color: blue # red, orange, yellow, green, cyan, blue, purple
+        label: 正常
+      at_risk: 
+        color: yellow
+        label: 风险
+      off_track:
+        color: orange
+        label: 延期
+      # 结果状态
+      finished:
+        color: green
+        label: 已完成
+      unfinished:
+        color: red
+        label: 未完成
+      
 
 
 ######## JS Plugins ########
@@ -366,7 +388,8 @@ plugins:
   tianli_gpt:
     enable: false
     field: post # all, post, wiki
-    api: 5Q5mpqRK5DkwT1X9Gi5e
+    api: 5Q5mpqRK5DkwT1X9Gi5e # tianli_gpt key
+    typingAnimate: true # 打字机动画 
 
 style:
   darkmode: auto # auto / always / false
