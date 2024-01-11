@@ -20,10 +20,11 @@ footer:
         本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 许可协议，转载请注明出处。
   sitemap:
     home:
-      group: 主页
+      group: Cubik 的小站
+      home: 主页
       about: 关于
       contact-me: 联系我
-      my-pgp: 我的 PGP
+      my-pgp: 我的 PGP 信息站
     blog:
       group: 博客
       posts: 近期发布

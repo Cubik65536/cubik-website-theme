@@ -21,10 +21,11 @@ footer:
     
   sitemap:
     home:
-      group: Home
+      group: Cubik's Sites
+      home: Home
       about: About
       contact-me: Contact Me
-      my-pgp: My PGP
+      my-pgp: My PGP Info Site
     blog:
       group: Blog
       posts: Recent Update
