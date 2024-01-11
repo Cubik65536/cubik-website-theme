@@ -102,34 +102,36 @@ function layoutWidgets() {
   return el;
 }
 function layoutFooterDiv() {
-  if (page.layout !== 'wiki' && theme.footer.social) {
+  if (page.layout !== 'wiki') {
     var el = '<footer class="footer dis-select">';
-    el += '<div class="social-wrap">';
-    for (let id of Object.keys(theme.footer.social)) {
-      let item = theme.footer.social[id];
-      if (item.icon && (item.url || item.onclick)) {
-        el += '<a rel="me" class="social"';
-        if (item.title) {
-          // el += ' title="' + item.title + '"';
-          el += ' title="' + __(md_text(item.title)) + '"';
-        }
-        if (item.url) {
-          el += ' href="' + url_for(item.url) + '"';
-          if (item.url.includes('://')) {
-            el += ' target="_blank" rel="external nofollow noopener noreferrer"';
-          } else {
-            el += ' rel="noopener noreferrer"';
+    if (theme.footer.social) {
+      el += '<div class="social-wrap">';
+      for (let id of Object.keys(theme.footer.social)) {
+        let item = theme.footer.social[id];
+        if (item.icon && (item.url || item.onclick)) {
+          el += '<a rel="me" class="social"';
+          if (item.title) {
+            // el += ' title="' + item.title + '"';
+            el += ' title="' + __(md_text(item.title)) + '"';
           }
-        } else if (item.onclick) {
-          item.onclick = item.onclick.replace(/"|\'/g, '&quot;');
-          el += ' onclick="' + item.onclick + '"';
+          if (item.url) {
+            el += ' href="' + url_for(item.url) + '"';
+            if (item.url.includes('://')) {
+              el += ' target="_blank" rel="external nofollow noopener noreferrer"';
+            } else {
+              el += ' rel="noopener noreferrer"';
+            }
+          } else if (item.onclick) {
+            item.onclick = item.onclick.replace(/"|\'/g, '&quot;');
+            el += ' onclick="' + item.onclick + '"';
+          }
+          el += '>';
+          el += item.icon;
+          el += '</a>';
         }
-        el += '>';
-        el += item.icon;
-        el += '</a>';
       }
+      el += '</div>';
     }
-    el += '</div>';
     if (theme.footer.largesocial) {
       el += '<br/>';
       el += '<div class="large-social-wrap">';
