@@ -5,7 +5,7 @@ const indexGenerator = require('hexo-generator-index/lib/generator');
 const archiveGenerator = require('hexo-generator-archive/lib/generator');
 const categoryGenerator = require('hexo-generator-category/lib/generator');
 const tagGenerator = require('hexo-generator-tag/lib/generator');
-const RFC5646_LANGUAGE_TAGS = require('../lib/rfc5646');
+const {RFC5646_LANGUAGE_TAGS, LOCALIZED_RFC5646_LANGUAGE_TAGS} = require('../lib/rfc5646');
 const {
     pathJoin,
     isDefaultLanguage,
@@ -383,4 +383,11 @@ hexo.extend.helper.register('language_name', function (language) {
     return RFC5646_LANGUAGE_TAGS[language]
     // const name = hexo.theme.i18n.__(language)('name');
     // return name === 'name' ? language : name;
+});
+
+/**
+ * Get the localized language name
+ */
+hexo.extend.helper.register('localized_language_name', function (language) {
+    return LOCALIZED_RFC5646_LANGUAGE_TAGS[language]
 });
