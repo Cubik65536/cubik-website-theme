@@ -1,10 +1,24 @@
 license: This article is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/), attribution required.
 
 footer:
-  content: |
-    This blog is powered by [Hexo](https://hexo.io/) & [Hexo Theme Stellar](https://xaoxuu.com/wiki/stellar/), you can find the source code on [GitHub](https://github.com/Cubik65536/cubik-website/).
-    Copyright © 2020-2024 [@Cubik65536](https://cubik65536.top). All rights reserved.
-    Articles on this site are all licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (except for those with special statements), attribution required.
+  content:
+    site:
+      open-source: |
+        Copyright © 2020-2024 [@Cubik65536](https://cubik65536.top). All rights reserved.
+        This site is powered by [Hexo](https://hexo.io/) & [Hexo Theme Stellar](https://xaoxuu.com/wiki/stellar/), you can find the source code on [GitHub](https://github.com/Cubik65536/cubik-website/).
+      closed-source: |
+        Copyright © 2020-2024 [@Cubik65536](https://cubik65536.top). All rights reserved.
+        This site is powered by [Hexo](https://hexo.io/) & [Hexo Theme Stellar](https://xaoxuu.com/wiki/stellar/).
+    blog:
+      open-source: |
+        This blog is powered by [Hexo](https://hexo.io/) & [Hexo Theme Stellar](https://xaoxuu.com/wiki/stellar/), you can find the source code on [GitHub](https://github.com/Cubik65536/cubik-website/).
+        Copyright © 2020-2024 [@Cubik65536](https://cubik65536.top). All rights reserved.
+        Articles on this site are all licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (except for those with special statements), attribution required.
+      closed-source: |
+        This blog is powered by [Hexo](https://hexo.io/) & [Hexo Theme Stellar](https://xaoxuu.com/wiki/stellar/).
+        Copyright © 2020-2024 [@Cubik65536](https://cubik65536.top). All rights reserved.
+        Articles on this site are all licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (except for those with special statements), attribution required.
+    
   sitemap:
     home:
       group: Home
