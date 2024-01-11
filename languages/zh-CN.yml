@@ -65,6 +65,8 @@ btn:
   music: 音乐
   tv: 电视节目
   message_board: 留言板
+  pgp: PGP
+  main_site: 主站
 
 meta:
   recent_update: 最近更新
@@ -137,6 +139,7 @@ largesocial:
     PGP: 我的 PGP 公钥
     foreverblog: 虫洞 | WORMHOLE
     travellings: 开往 | Travelling
+    email: 向我发送邮件
   
 picturesocial:
   foreverblog: 【CUBIK 的小站】十年之约

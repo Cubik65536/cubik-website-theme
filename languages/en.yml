@@ -65,6 +65,8 @@ btn:
   music: Music
   tv: TV
   message_board: Message Board
+  pgp: PGP
+  main_site: Main Site
 
 meta:
   recent_update: Recent Update
@@ -137,6 +139,7 @@ largesocial:
     PGP: My PGP Public Key
     foreverblog: 虫洞 | WORMHOLE
     travellings: 开往 | Travelling
+    email: Send Email
 
 picturesocial:
   foreverblog: 【CUBIK 的小站】Forever Blog
