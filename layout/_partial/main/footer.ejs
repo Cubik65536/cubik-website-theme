@@ -2,6 +2,9 @@
 const content = theme.footer.content;
 const language = page_language();
 function layoutDiv() {
+  if (theme.footer.sitemap || theme.footer.content) {
+    return;
+  }
   var el = '';
   el += '<footer class="page-footer reveal fs12">';
   el += '<hr>';
