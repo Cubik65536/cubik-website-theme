@@ -3,43 +3,44 @@ const content = theme.footer.content;
 const language = page_language();
 function layoutDiv() {
   if (theme.footer.sitemap || theme.footer.content) {
-    return;
-  }
-  var el = '';
-  el += '<footer class="page-footer reveal fs12">';
-  el += '<hr>';
-  // sitemap
-  if (theme.footer.sitemap && Object.keys(theme.footer.sitemap).length > 0) {
-    el += '<div class="sitemap">';
-    for (let group of Object.keys(theme.footer.sitemap)) {
-      let items = theme.footer.sitemap[group];
-      if (items == undefined || items.length == 0) {
-        continue;
+    var el = '';
+    el += '<footer class="page-footer reveal fs12">';
+    el += '<hr>';
+    // sitemap
+    if (theme.footer.sitemap && Object.keys(theme.footer.sitemap).length > 0) {
+      el += '<div class="sitemap">';
+      for (let group of Object.keys(theme.footer.sitemap)) {
+        let items = theme.footer.sitemap[group];
+        if (items == undefined || items.length == 0) {
+          continue;
+        }
+        el += '<div class="sitemap-group">';
+        el += '<span class="fs14">' + __(group) + '</span>';
+        items.forEach((item, i) => {
+          el += '<a href="' + url_for(url_i18n_path(!is_default_language(language) ? language : null, md_link(item))) + '">';
+          el += __(md_text(item));
+          el += '</a>';
+        });
+        el += '</div>';
       }
-      el += '<div class="sitemap-group">';
-      el += '<span class="fs14">' + __(group) + '</span>';
-      items.forEach((item, i) => {
-        el += '<a href="' + url_for(url_i18n_path(!is_default_language(language) ? language : null, md_link(item))) + '">';
-        el += __(md_text(item));
-        el += '</a>';
-      });
       el += '</div>';
     }
-    el += '</div>';
-  }
-  // footer
-  el += '<div class="text">';
-  if (content) {
-    if ((typeof content == 'string') && content.constructor == String) {
-      el += markdown(__(content));
-    } else if ((typeof content == 'object') && content.constructor == Array) {
-      content.forEach((item, i) => {
-        el += markdown(item);
-      });
+    // footer
+    el += '<div class="text">';
+    if (content) {
+      if ((typeof content == 'string') && content.constructor == String) {
+        el += markdown(__(content));
+      } else if ((typeof content == 'object') && content.constructor == Array) {
+        content.forEach((item, i) => {
+          el += markdown(item);
+        });
+      }
     }
+    el += '</div></footer>';
+    return el;
+  } else {
+    return '';
   }
-  el += '</div></footer>';
-  return el;
 }
 %>
 <%- layoutDiv() %>
