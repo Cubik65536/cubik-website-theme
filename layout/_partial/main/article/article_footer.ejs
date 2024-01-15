@@ -18,18 +18,13 @@ function layoutDiv() {
   if (page.references?.length > 0) {
     function refList() {
       var el = '';
-      page.references.forEach((item, i) => {
-        el += '<li class="post-title">';
-        el += '<a href="' + item.url + '"';
-        if (item.url.includes('://')) {
-          el += ' target="_blank" rel="external nofollow noopener noreferrer">';
-        } else {
-          el += ' rel="noopener noreferrer">';
-        }
-        el += item.title || item.url;
-        el += '</a>';
-        el += '</li>';
-      });
+      for (let ref of page.references) {
+        el += `
+        <li class="post-title">
+          ${markdown(ref)}
+        </li>
+        `
+      }
       return el;
     }
     el += `
@@ -43,41 +38,52 @@ function layoutDiv() {
   }
 
   var license = ''
-  if (page.layout == 'post') {
-    if (theme.article.license && (page.license != false)) {
-      license = markdown(__(page.license || theme.article.license))
-    }
-  } else if (page.layout == 'wiki' && page.wiki) {
+  if (page.wiki) {
     let proj = theme.wiki.tree[page.wiki]
     if (page.license != null) {
-      license = markdown(page.license || theme.article.license)
+      license = page.license || theme.article.license
     } else if (proj?.license != null) {
       if (proj.license == true) {
-        license = markdown(theme.article.license)
+        license = theme.article.license
       } else {
-        license = markdown(proj.license)
+        license = proj.license
       }
+    }
+  } else if (page.layout == 'post') {
+    if (theme.article.license && (page.license != false)) {
+      license = page.license || theme.article.license
     }
   }
   if (license.length > 0) {
+    var author = null
+    if (theme.authors) {
+      if (page.author?.length > 0 && theme.authors[page.author] != null) {
+        author = theme.authors[page.author]
+      } else {
+        author = theme.default_author
+      }
+    }
+    if (author) {
+      license = license.replace('${author.name}', author.name).replace('${author.url}', author.url)
+    }
     el += `
     <section id="license">
       <div class="header"><span>${__('meta.license')}</span></div>
-      <div class="body">${license}</div>
+      <div class="body">${markdown(license)}</div>
     </section>
     `
   }
 
   var showSharePlugin = false
-  if (page.layout == 'post') {
-    showSharePlugin = page.share != false
-  } else if (page.layout == 'wiki' && page.wiki) {
+  if (page.wiki) {
     let proj = theme.wiki.tree[page.wiki]
     if (page.share != null) {
       showSharePlugin = page.share == true
     } else if (proj != null) {
       showSharePlugin = proj.share == true
     }
+  } else if (page.layout == 'post') {
+    showSharePlugin = page.share != false
   }
   if (theme.article.share && showSharePlugin) {
     function socialButtons() {
@@ -95,8 +101,8 @@ function layoutDiv() {
             el += '&title=' + (page.seo_title || (page.title + ' - ' + config.title));
             if (page.layout == 'post' && page.cover) {
               el += '&pics=' + page.cover;
-            } else if (page.layout == 'wiki' && page.logo && page.logo.src) {
-              el += '&pics=' + page.logo.src;
+            } else if (page.layout == 'wiki' && page.icon) {
+              el += '&pics=' + page.icon;
             }
             el += '&summary=' + truncate(page.description || strip_html(page.excerpt || page.content), {length: 120});
             el += '"';

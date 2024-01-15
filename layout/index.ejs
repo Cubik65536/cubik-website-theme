@@ -1,10 +1,6 @@
 <%
 if (page.menu_id == undefined) {
-  if (page.layout === 'wiki_index' && page.wiki) {
-    page.menu_id = 'wiki';
-  } else {
-    page.menu_id = 'post';
-  }
+  page.menu_id = 'post';
 }
 if (page.title && page.wiki) {
   page.robots = 'noindex,follow';
@@ -22,7 +18,7 @@ function layout_post_card(layout, post, content) {
   return el;
 }
 
-function layout_posts(partial) {
+function layout_post_list(partial) {
   var el = '';
   el += '<div class="post-list post">';
   if (is_home()) {
@@ -48,43 +44,10 @@ function layout_posts(partial) {
   return el;
 }
 
-function layout_wikis(partial) {
-  var el = '';
-  var wikis = [];
-  const { shelf, tree } = theme.wiki;
-  for (let pid of shelf) {
-    let proj = tree[pid];
-    if (proj == null) {
-      continue;
-    }
-    if (proj.pages == undefined || proj.pages.length === 0) {
-      continue;
-    }
-    if (page.filter === false) {
-      // all wikis
-      el += '<div class="post-list wiki">';
-      el += layout_post_card('wiki', proj.homepage, partial(proj));
-      el += '</div>';
-    } else if (proj.tags && proj.tags.includes(page.tagName) === true) {
-      // filtered wikis
-      el += '<div class="post-list wiki filter">';
-      el += layout_post_card('wiki', proj.homepage, partial(proj));
-      el += '</div>';
-    }
-  }
-  return el;
-}
 %>
 
-<% if (page.menu_id === 'post') { %>
-  <%- partial('_partial/main/navbar/list_post') %>
-  <%- layout_posts(function(post){
-    return partial('_partial/main/post_list/post_card', {post: post})
-  }) %>
-  <%- partial('_partial/main/post_list/paginator') %>
-<% } else if (page.menu_id === 'wiki') { %>
-  <%- partial('_partial/main/navbar/list_wiki') %>
-  <%- layout_wikis(function(proj){
-    return partial('_partial/main/post_list/wiki_card', {proj: proj})
-  }) %>
-<% } %>
+<%- partial('_partial/main/navbar/nav_tabs_blog') %>
+<%- layout_post_list(function(post){
+  return partial('_partial/main/post_list/post_card', {post: post})
+}) %>
+<%- partial('_partial/main/post_list/paginator') %>
