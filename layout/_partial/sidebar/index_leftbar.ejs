@@ -136,7 +136,7 @@ function layoutFooterDiv() {
           // el += ' title="' + __(md_text(item.title)) + '"';
         }
         if (item.url) {
-          el += ' title="' + item.url + '"';
+          el += ' href="' + item.url + '"';
           // el += ' href="' + url_for(item.url) + '"';
           if (item.url.includes('://')) {
             el += ' target="_blank" rel="external nofollow noopener noreferrer"';
