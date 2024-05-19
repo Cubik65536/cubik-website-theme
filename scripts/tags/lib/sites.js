@@ -9,6 +9,9 @@
 
 module.exports = ctx => function(args) {
   args = ctx.args.map(args, ['repo', 'api'], ['group'])
+
+  console.log("group: ", args.group)
+  
   var api
   if (args.api) {
     api = args.api
