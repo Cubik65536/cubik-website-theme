@@ -15,6 +15,15 @@ function layoutDiv() {
     return el;
   }
   el += `<div class="article-footer${scrollreveal(' ')} fs14">`
+
+  if (page.extrainfo) {
+    el += `
+    <section id="extrainfo">
+      <div class="body">${markdown(page.extrainfo)}</div>
+    </section>
+    `
+  }
+
   if (page.references?.length > 0) {
     function refList() {
       var el = '';
